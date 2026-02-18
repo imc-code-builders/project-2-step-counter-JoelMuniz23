@@ -18,6 +18,9 @@ def get_changes(magnitudes):
     changes = []
 
     # TODO: For each pair, calculate: next_value - current_value
+for i in range(len(magnitudes) - 1):
+     change = magnitudesn[i + i] - magnitudes[i]
+     changes.append (change)
 
     return changes
 
@@ -37,7 +40,7 @@ def count_peaks(changes, threshold):
     step_count = 0
 
     # TODO: Count changes greater than or equal to threshold
-
+   
     return step_count
 
 
