@@ -18,9 +18,9 @@ def get_changes(magnitudes):
     changes = []
 
     # TODO: For each pair, calculate: next_value - current_value
-for i in range(len(magnitudes) - 1):
-     change = magnitudesn[i + i] - magnitudes[i]
-     changes.append (change)
+    for i in range(len(magnitudes) - 1):
+        change = magnitudes[i + 1] - magnitudes[i]
+        changes.append (change)
 
     return changes
 
@@ -40,10 +40,11 @@ def count_peaks(changes, threshold):
     step_count = 0
 
     # TODO: Count changes greater than or equal to threshold
-   
+    for change in changes:
+        if change >= threshold:
+            step_count += 1
+
     return step_count
-
-
 def count_steps(magnitudes, threshold=STEP_THRESHOLD):
     """Main function: use other functions to count steps.
     
@@ -56,8 +57,10 @@ def count_steps(magnitudes, threshold=STEP_THRESHOLD):
     """
 
     # TODO: Use get_changes() and count_peaks()
+    changes = get_changes(magnitudes)
+    number_of_step = count_peaks(changes, threshold)
 
-    return 0
+    return number_of_step
 
 
 if __name__ == "__main__":
